@@ -1,0 +1,55 @@
+﻿@model List<Escuela.Dominio.Course>
+@{
+    ViewData["Title"] = "ShowCourse";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <div>
+        <table class="table table-hover">
+            <thead>
+            <th>
+                CourseId
+            </th>
+            <th>
+                Title
+            </th>
+            <th>
+                Credits
+            </th>
+            <th>
+                @Html.ActionLink("Agg", "Ingresar", new { id = 0 }, new { @class = "btn btn-success" })
+                
+            </th>
+
+    </div>
+    <tbody>
+
+        <div>
+            @foreach (var item in Model)
+            {
+<tr>
+                <td>@item.CouserId</td>
+                <td>@item.Title</td>
+                <td>@item.Credits</td>
+               
+
+
+
+                <td>
+                    @Html.ActionLink("update", "Ingresar", new { Id = item.CouserId, Title = item.Title, Credits = item.Credits }, new { @class = "btn btn-info" })
+
+
+
+
+                </td>
+
+                </tr>
+        }
+
+
+
+
+        </tbody</div>
+
+

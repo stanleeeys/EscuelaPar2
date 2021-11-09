@@ -1,0 +1,48 @@
+﻿@model List<Escuela.Dominio.Students>
+@{
+    ViewData["Title"] = "ShowStudent";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <table class="table table-hover">
+        <thead>
+        <th>
+            StudentId
+        </th>
+        <th>
+            LastName
+        </th>
+        <th>
+            FirstMiName
+        </th>
+        <th>
+            DateEnrollments
+        </th>
+        <tbody>
+        <th>
+            @foreach (var item in Model)
+            {
+        <tr>
+            <td>@item.StudentId</td>
+            <td>@item.LastName</td>
+            <td>@item.FirstMidName</td>
+            <td>@item.EnrrollmentsDate</td>
+
+
+
+            <td>
+                @Html.ActionLink("update", "Ingresar", new { Id = item.StudentId, Apellidos = item.LastName, Nombres = item.FirstMidName, Fechas = item.EnrrollmentsDate }, new { @class = "btn btn-info" })
+
+
+
+
+            </td>
+            <th>
+            @Html.ActionLink("Agregar", "Ingresar", new { id = 0 }, new { @class = "btn btn-success" })
+            </th>
+        </tr>
+        }
+            </tbody>
+        </table>
+    </div>

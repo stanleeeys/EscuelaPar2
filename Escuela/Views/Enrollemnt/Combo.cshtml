@@ -1,0 +1,31 @@
+﻿@model Escuela.Dominio.Erollement
+@{
+    ViewData["Title"] = "Combo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Combo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+    @using (Html.BeginForm("Guardar", "Enrollemnt", FormMethod.Get))
+    {
+        @Html.DropDownListFor(a => a.CourseID, new SelectList(ViewBag.estado, "Value", "Text"), "Select a curso", new { clas = "form-control" })
+        @Html.DropDownListFor(a => a.StudentID, new SelectList(ViewBag.estadoStudents, "Value", "Text"), "Select a students", new { @class = "form-control" })
+
+    <label>
+        <label for="Grade">Grade</label>
+        <br />
+        <input type="number" name="Grade" />
+        <br />
+    </label>
+        <input type="submit" />
+    }
+</body>
+
+</html>
+

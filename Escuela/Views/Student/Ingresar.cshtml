@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"] = "Ingresar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("Guardar", "Student", FormMethod.Post))
+{
+    <label for="Id">ID</label>
+    <br />
+    <input type="hidden" name="Id" value="@ViewBag.Id" />
+    <br />
+    <label for="Apellidos">Apellido</label>
+    <br />
+    <input type="text" name="Apellidos" value="@ViewBag.Apellidos" />
+    <br />
+    <label for="Nombres">Nombre</label>
+    <br />
+    <input type="text" name="Nombres" value="@ViewBag.Nombres" />
+    <br />
+
+    <label for="Fechas">Fecha</label>
+    <br />
+    <input type="text" name="Fechas" value="@ViewBag.Fechas" />
+    <br />
+    <input type ="submit" />
+}

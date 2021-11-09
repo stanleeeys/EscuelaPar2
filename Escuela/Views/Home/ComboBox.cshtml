@@ -1,0 +1,33 @@
+﻿@model Escuela.Dominio.Erollement
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ComboBox</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+
+
+
+
+
+
+<body>
+
+    @using (Html.BeginForm("", "", FormMethod.Get))
+    {
+        @Html.DropDownListFor(a => a.CourseID, new SelectList(ViewBag.estado, "Value", "Text"), "Selecciona un curso", new { clas = "form-control" })
+        @Html.DropDownListFor(a => a.StudentID, new SelectList(ViewBag.estadoStudents, "Value", "Text"), "Select a students", new { @class = "form-control" })
+
+
+        <input type="submit" />
+    }
+</body>
+
+</html>
+

@@ -1,0 +1,52 @@
+﻿@model List<Escuela.Dominio.Erollement>
+@{
+    ViewData["Title"] = "JoinTbl";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Html.ActionLink("Agg new", "Combo", new { EnrollemtsId = 0 }, new { @class = "btn btn-success" })
+<div>
+    <table class="table table-hover">
+        <thead>
+        <th>
+            EnrollemntId
+        </th>
+        <th>
+            CourseId
+        </th>
+        <th>
+            StudentId
+        </th>
+        <th>
+            LastName
+        </th>
+        <th>
+            FirstMiName
+        </th>
+        <th>
+            Course
+        </th>
+        <th>
+            Grade
+        </th>
+        <tbody>
+        <th>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.ErollementID</td>
+                <td>@item.Course.CouserId</td>
+                <td>@item.StudentID</td>
+                <td>@item.Student.LastName</td>
+                <td>@item.Student.FirstMidName</td>
+                <td>@item.Course.Title</td>
+                <td>@item.Grade</td>
+
+
+
+            </tr>
+
+        }
+            </tbody>
+        </table>
+
+
